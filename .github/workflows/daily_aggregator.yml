@@ -1,4 +1,4 @@
-name: Aggregator Daily Build
+name: ciallo Daily Build
 
 on:
   schedule:
