@@ -61,8 +61,9 @@ jobs:
     - name: Install Environment & Download GeoIP Database
       run: |
         pip install maxminddb
-        # 下载免费开源的 MaxMind IP 地理库
-        wget -qO geoip.mmdb "https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/download/geoip.mmdb"
+        # 使用 curl 下载最新的国家/地区级 IP 库（添加 -L 处理重定向）
+        curl -L -o geoip.mmdb "https://github.com/P3TERX/GeoLite.mmdb/releases/latest/download/GeoLite2-Country.mmdb"
+
 
     - name: Run Check Active Script
       run: |
